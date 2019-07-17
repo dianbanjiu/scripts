@@ -1,7 +1,10 @@
 #!/bin/bash
+if [ ! -d ".termux" ]
+then
+    mkdir .termux
+fi
 
-mkdir .termux 
-echo "extra-keys = [['ESC','/','-','HOME','UP','END','PGUP'],['TAB','CTRL','ALT','LEFT','DOWN','RIGHT','PGDN']]" >> .termux/termux.properties
+echo "extra-keys = [['ESC','/','-','HOME','UP','END','PGUP'],['TAB','CTRL','ALT','LEFT','DOWN','RIGHT','PGDN']]" > .termux/termux.properties
 echo "bell-character = ignore" >> .termux/termux.properties
 
 # change repo mirrors to ustc
@@ -11,7 +14,7 @@ echo "deb https://mirrors.ustc.edu.cn/termux stable main" > $PREFIX/etc/apt/sour
 apt update
 apt upgrade -y
 
-apt install -y git vim openssh cowsay tree zsh wget curl
+apt install -y git openssh cowsay tree zsh wget curl build-essential cmake python-dev vim-python
 
 # set cowsay "Don't do anything stupid" to launch welcome
 cowsay "Don't do anything stupid" > $PERFIX/etc/motd
@@ -27,7 +30,7 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 sed -i 's/plugins=(git)/plugins=(git zsh-syntax-highlighting)/g' .zshrc
 
 # enable phone internal storage for termux
-termuxu-setup-storage
+termux-setup-storage
 if [! -d "$HOME/storage/downloads/termux"]
 then
 	mkdir $PREFIX/home/storage/downloads/termux
@@ -41,9 +44,10 @@ echo "begin to install vim-plug"
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
-git clone https://github.com/dianbanjiu/zshrc.git .vimrc
+git clone https://github.com/dianbanjiu/.vimrc vimrc 
+mv vimrc/.vimrc ~/.vimrc
+rm -rf vimrc 
 
-apt install -y build-essential cmake python3-dev vim-python
 vim "-c PlugInstall"
 cd ~/.vim/plugged/YouCompleteMe
 python install.py
