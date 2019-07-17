@@ -11,10 +11,9 @@ echo "bell-character = ignore" >> .termux/termux.properties
 echo "change mirrors to ustc"
 echo "deb https://mirrors.ustc.edu.cn/termux stable main" > $PREFIX/etc/apt/sources.list
 
-apt update
-apt upgrade -y
+pkg upgrade -y
 
-apt install -y git openssh cowsay tree zsh wget curl build-essential cmake python-dev vim-python
+pkg install -y git openssh cowsay tree zsh wget curl build-essential cmake python-dev vim-python
 
 # set cowsay "Don't do anything stupid" to launch welcome
 # cowsay "Don't do anything stupid" > $PERFIX/etc/motd

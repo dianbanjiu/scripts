@@ -9,5 +9,3 @@ termux.sh 可以在安装完 termux 之后进行一些自动化的简单配置�
     - YouCompleteMe(仅为 python 编译了自动补全)
     - nerdtree
 
-依旧存在的一些小问题：
-- 第一次执行脚本后会报一个 dpkg 相关的错误（事实上安装完 termux 后的第一次 upgrade 总会出现这个错误）
