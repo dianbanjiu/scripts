@@ -17,25 +17,25 @@ apt upgrade -y
 apt install -y git openssh cowsay tree zsh wget curl build-essential cmake python-dev vim-python
 
 # set cowsay "Don't do anything stupid" to launch welcome
-cowsay "Don't do anything stupid" > $PERFIX/etc/motd
-echo -e "\n\n\n\n" >> $PERFIX/etc/motd
+# cowsay "Don't do anything stupid" > $PERFIX/etc/motd
+# echo -e "\n\n\n\n" >> $PERFIX/etc/motd
 
 # install oh my zsh and it's plugin zsh-syntax-highlight
 cd
 echo "begin to get oh-my-zsh"
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-
+chsh -s zsh
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 
 sed -i 's/plugins=(git)/plugins=(git zsh-syntax-highlighting)/g' .zshrc
 
 # enable phone internal storage for termux
-termux-setup-storage
-if [! -d "$HOME/storage/downloads/termux"]
-then
-	mkdir $PREFIX/home/storage/downloads/termux
-	echo "storage/downloads/termux created"
-fi
+#termux-setup-storage
+#if [! -d "$HOME/storage/downloads/termux"]
+#then
+#	mkdir $PREFIX/home/storage/downloads/termux
+#	echo "storage/downloads/termux created"
+#fi
 
 ln -sf storage/downloads/termux termux
 
@@ -51,5 +51,4 @@ rm -rf vimrc
 vim "-c PlugInstall"
 cd ~/.vim/plugged/YouCompleteMe
 python install.py
-python install.py --rust-completer
 
