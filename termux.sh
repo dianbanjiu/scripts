@@ -19,8 +19,8 @@ pkg upgrade -y
 pkg install -y git openssh cowsay tree zsh wget curl build-essential cmake python-dev vim-python ctags
 
 # set cowsay "Don't do anything stupid" to launch welcome
-# cowsay "Don't do anything stupid" > $PERFIX/etc/motd
-# echo -e "\n\n\n\n" >> $PERFIX/etc/motd
+cowsay "Don't do anything stupid" > $PERFIX/etc/motd
+echo -e "\n\n\n\n" >> $PERFIX/etc/motd
 
 # install oh my zsh and it's plugin zsh-syntax-highlight
 cd
