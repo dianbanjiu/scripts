@@ -32,7 +32,7 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/
 sed -i 's/plugins=(git)/plugins=(git zsh-syntax-highlighting)/g' .zshrc
 
 # enable phone internal storage for termux
-#termux-setup-storage
+termux-setup-storage
 #if [! -d "$HOME/storage/downloads/termux"]
 #then
 #	mkdir $PREFIX/home/storage/downloads/termux
