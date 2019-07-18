@@ -16,7 +16,7 @@ then
 fi
 
 pkg upgrade -y
-pkg install -y git openssh cowsay tree zsh wget curl build-essential cmake python-dev vim-python
+pkg install -y git openssh cowsay tree zsh wget curl build-essential cmake python-dev vim-python ctags
 
 # set cowsay "Don't do anything stupid" to launch welcome
 # cowsay "Don't do anything stupid" > $PERFIX/etc/motd
