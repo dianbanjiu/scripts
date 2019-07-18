@@ -2,17 +2,20 @@
 if [ ! -d ".termux" ]
 then
     mkdir .termux
+    if ! grep extra-key $HOME/.termux/termux.properties  
+    then
+        echo "extra-keys = [['ESC','/','-','HOME','UP','END','PGUP'],['TAB','CTRL','ALT','LEFT','DOWN','RIGHT','PGDN']]" >> .termux/termux.properties
+        echo "bell-character = ignore" >> .termux/termux.properties 
 fi
-
-echo "extra-keys = [['ESC','/','-','HOME','UP','END','PGUP'],['TAB','CTRL','ALT','LEFT','DOWN','RIGHT','PGDN']]" > .termux/termux.properties
-echo "bell-character = ignore" >> .termux/termux.properties
 
 # change repo mirrors to ustc
 echo "change mirrors to ustc"
-echo "deb https://mirrors.ustc.edu.cn/termux stable main" > $PREFIX/etc/apt/sources.list
+if ! grep ustc $PREFIX/etc/apt/sources.list
+then 
+    echo "deb https://mirrors.ustc.edu.cn/termux stable main" > $PREFIX/etc/apt/sources.list
+fi
 
 pkg upgrade -y
-
 pkg install -y git openssh cowsay tree zsh wget curl build-essential cmake python-dev vim-python
 
 # set cowsay "Don't do anything stupid" to launch welcome
@@ -24,7 +27,7 @@ cd
 echo "begin to get oh-my-zsh"
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 chsh -s zsh
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/plugins/zsh-syntax-highlighting
 
 sed -i 's/plugins=(git)/plugins=(git zsh-syntax-highlighting)/g' .zshrc
 
