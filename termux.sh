@@ -6,6 +6,7 @@ then
     then
         echo "extra-keys = [['ESC','/','-','HOME','UP','END','PGUP'],['TAB','CTRL','ALT','LEFT','DOWN','RIGHT','PGDN']]" >> .termux/termux.properties
         echo "bell-character = ignore" >> .termux/termux.properties 
+    fi
 fi
 
 # change repo mirrors to ustc
