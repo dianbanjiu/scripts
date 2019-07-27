@@ -33,12 +33,12 @@ sed -i 's/plugins=(git)/plugins=(git zsh-syntax-highlighting)/g' .zshrc
 
 # enable phone internal storage for termux
 termux-setup-storage
-#if [! -d "$HOME/storage/downloads/termux"]
-#then
-#	mkdir $PREFIX/home/storage/downloads/termux
-#	echo "storage/downloads/termux created"
-#fi
-
+sleep 10
+if [! -d "$HOME/storage/downloads/termux"]
+then
+	mkdir $PREFIX/home/storage/downloads/termux
+	echo "storage/downloads/termux created"
+fi
 ln -sf storage/downloads/termux termux
 
 # install vim-plug for vim
