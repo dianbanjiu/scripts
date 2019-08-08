@@ -1,5 +1,6 @@
 #!/bin/bash
 # before ./termux.sh, you need "pkg upgrade && pkg install git" first
+cd
 if [ ! -d ".termux" ]
 then
     mkdir .termux
