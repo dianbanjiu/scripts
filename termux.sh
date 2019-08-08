@@ -17,7 +17,7 @@ then
     echo "deb https://mirrors.ustc.edu.cn/termux stable main" > $PREFIX/etc/apt/sources.list
 fi
 
-pkg install -y git openssh cowsay tree zsh wget curl build-essential cmake python-dev vim ctags
+pkg install -y git openssh cowsay tree zsh wget curl build-essential cmake python vim ctags
 
 # set cowsay "Don't do anything stupid" to launch welcome
 #cowsay "Don't do anything stupid" > $PERFIX/etc/motd
