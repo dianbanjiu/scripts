@@ -15,7 +15,7 @@ fi
 echo "change mirrors to ustc"
 if ! grep ustc $PREFIX/etc/apt/sources.list
 then 
-    echo "deb https://mirrors.ustc.edu.cn/termux stable main" > $PREFIX/etc/apt/sources.list
+    echo "deb https://mirrors.ustc.edu.cn/termux stable main" >> $PREFIX/etc/apt/sources.list
 fi
 
 pkg install -y git openssh cowsay tree zsh wget curl build-essential cmake python vim ctags
