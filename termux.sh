@@ -42,11 +42,6 @@ then
 fi
 ln -sf storage/downloads/termux termux
 
-# install vim-plug for vim
-echo "begin to install vim-plug"
-curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-
 git clone https://github.com/dianbanjiu/.vimrc vimrc 
 mv vimrc/.vimrc ~/.vimrc
 rm -rf vimrc 

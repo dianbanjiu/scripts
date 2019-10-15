@@ -1,12 +1,12 @@
-# termux.sh
+**在执行脚本之前，请确保已经赋予脚本可执行权限**  
+
+## termux.sh
 可以在安装完 termux 之后进行一些自动化的简单配置，主要包括
 - 开启双层特殊键
 - 关闭震动反馈
 - 添加中科大镜像源
 - 安装 oh my zsh 与其插件 zsh-syntax-highlighting
 - 启用内部存储（需手动确认）
-- 使用 vim-plug 安装以下几个 vim 插件（插件的具体内容以及一些 vim 的简单配置位于我的另一个库 dianbanjiu/.vimrc 中，[点击此处到达](https://github.com/dianbanjiu/.vimrc)）
-    - vim-airline
 
 ## docker.sh  
 建议在执行该脚本时使用普通用户，而非超级用户。  
@@ -16,3 +16,6 @@
 
 ## keybord
 将其添加到开机自启动脚本当中，可以在系统开机的时候关掉笔记本的自带键盘
+
+## zsh-installation
+下载 oh-my-zsh 及 zsh-syntax 和 zsh-autosuggestions 两个插件。  
