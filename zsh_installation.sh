@@ -3,7 +3,7 @@
 # Please make sure you already pre-install zsh and git
 
 # Access oh-my-zsh script to local
-git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+git clone --depth 1 https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
 
 # Create a new zsh configuration file
 cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
