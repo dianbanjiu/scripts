@@ -19,3 +19,12 @@
 
 ## zsh-installation
 下载 oh-my-zsh 及 zsh-syntax 和 zsh-autosuggestions 两个插件。  
+
+### cronfile && postBackup  
+每天检查一次是否有新的文章或者之前的文章是否有修改，如果有的话就将其添加到网盘的同步文件夹当中。  
+
+将 postBackup 中的 path1 路径修改为博客文章所在的路径，path2 修改为网盘在本地的同步位置，然后使用下面的命令将七天加到 cron 定时脚本当中：  
+```shell
+$ crontab /path/to/cronfile
+```
+
