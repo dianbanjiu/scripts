@@ -38,7 +38,7 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/
 sed -i 's/plugins=(git)/plugins=(git zsh-syntax-highlighting)/g' .zshrc
 
 # enable phone internal storage for termux
-# and link the internal downloads/termux to the home directory.
+# and link the internal downloads to the home directory.
 # for storage termux data to here
 termux-setup-storage
 sleep 10
@@ -47,7 +47,7 @@ then
 	mkdir $PREFIX/home/storage/downloads/termux
 	echo "storage/downloads/termux created"
 fi
-ln -sf storage/downloads/termux termux
+ln -sf storage/downloads
 
 # downloads the simple vim script
 git clone https://github.com/dianbanjiu/.vimrc vimrc 
