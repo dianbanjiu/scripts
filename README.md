@@ -1,10 +1,18 @@
+# 实用脚本合辑
+
 **在执行脚本之前，请确保已经赋予脚本可执行权限**  
+
+## blog.py
+使用方式：在 hugo 站点的根目录下执行下面的命令  
+```shell
+$ ./blog.py create "blogTitle" # 创建新的博客文章  
+$ ./blog.py push "commits" # 推送文章及渲染结果到远程仓库 
+```
 
 ## termux.sh
 可以在安装完 termux 之后进行一些自动化的简单配置，主要包括
 - 开启双层特殊键
 - 关闭震动反馈
-- 添加中科大镜像源
 - 安装 oh my zsh 与其插件 zsh-syntax-highlighting
 - 启用内部存储（需手动确认）
 
@@ -19,12 +27,4 @@
 
 ## zsh-installation
 下载 oh-my-zsh 及 zsh-syntax 和 zsh-autosuggestions 两个插件。  
-
-### cronfile && postBackup  
-每天检查一次是否有新的文章或者之前的文章是否有修改，如果有的话就将其添加到网盘的同步文件夹当中。  
-
-将 postBackup 中的 path1 路径修改为博客文章所在的路径，path2 修改为网盘在本地的同步位置，然后使用下面的命令将其添加到 cron 定时脚本当中：  
-```shell
-$ crontab /path/to/cronfile
-```
 
