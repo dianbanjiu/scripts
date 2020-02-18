@@ -28,3 +28,13 @@ $ ./blog.py push "commits" # 推送文章及渲染结果到远程仓库
 ## zsh-installation
 下载 oh-my-zsh 及 zsh-syntax 和 zsh-autosuggestions 两个插件。  
 
+## gtd.sh
+一个非常简单的倒计时程序，使用方法：  
+```shell
+$ ./gtd.sh 30s  
+$ ./gtd.sh 2h
+```
+
+在未指定单位时，默认是秒。  
+
+
