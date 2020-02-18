@@ -4,19 +4,13 @@
 import os
 import sys
 
-if str(sys.argv[1]) == "create":
-    create()
-elif str(sys.argv[1]) == "push":
-    push()
-else:
-    print("未指定文章 标题/提交信息，或者指定过多\n")
-    sys.exit(0)
-
 
 def create():
     # 创建一篇新的博客文章
     createCMD = "hugo new post/"+str(sys.argv[2])+".md"
     os.system(createCMD)
+    openFile = "code content/post/"+str(sys.argv[2])+".md"
+    os.system(openFile)
 
 
 def push():
@@ -37,3 +31,12 @@ def push():
                     "git push origin master"]
     for cmd in blogBodyPush:
         os.system(cmd)
+
+
+if str(sys.argv[1]) == "create":
+    create()
+elif str(sys.argv[1]) == "push":
+    push()
+else:
+    print("未指定文章 标题/提交信息，或者指定过多\n")
+    sys.exit(0)
