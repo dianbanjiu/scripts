@@ -29,14 +29,6 @@ pkg install -y git openssh cowsay tree zsh wget curl build-essential cmake pytho
 cowsay "Don't do anything stupid" > ../usr/etc/motd
 #echo -e "\n\n\n\n" >> $PERFIX/etc/motd
 
-# install oh my zsh and it's plugin zsh-syntax-highlight
-cd
-echo "begin to get oh-my-zsh"
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/plugins/zsh-syntax-highlighting
-
-sed -i 's/plugins=(git)/plugins=(git zsh-syntax-highlighting)/g' .zshrc
-
 # enable phone internal storage for termux
 # and link the internal downloads to the home directory.
 # for storage termux data to here
@@ -54,6 +46,17 @@ git clone https://github.com/dianbanjiu/.vimrc vimrc
 mv vimrc/.vimrc ~/.vimrc
 rm -rf vimrc 
 
+pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
+pip install youtube-dl
+
+# install oh my zsh and it's plugin zsh-syntax-highlight
+cd
+echo "begin to get oh-my-zsh"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/plugins/zsh-syntax-highlighting
+
+sed -i 's/plugins=(git)/plugins=(git zsh-syntax-highlighting)/g' .zshrc
+
 # vim "-c PlugInstall"
 # change default shell to zsh
-chsh -s zsh
+# chsh -s zsh
