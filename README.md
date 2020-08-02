@@ -2,13 +2,6 @@
 
 **在执行脚本之前，请确保已经赋予脚本可执行权限**  
 
-## blog.py
-使用方式：在 hugo 站点的根目录下执行下面的命令  
-```shell
-$ ./blog.py create "blogTitle" # 创建新的博客文章  
-$ ./blog.py push "commits" # 推送文章及渲染结果到远程仓库 
-```
-
 ## termux.sh
 可以在安装完 termux 之后进行一些自动化的简单配置，主要包括
 - 开启双层特殊键
@@ -27,16 +20,3 @@ $ ./blog.py push "commits" # 推送文章及渲染结果到远程仓库
 
 ## zsh-installation
 下载 oh-my-zsh 及 zsh-syntax 和 zsh-autosuggestions 两个插件。  
-
-## gtd.sh
-一个非常简单的倒计时程序，使用方法：  
-```shell
-$ ./gtd.sh 30s  
-$ ./gtd.sh 2h
-```
-
-在未指定单位时，默认是秒。  
-
-
-## rm.sh
-其中包含一个简单的函数，当使用 rm 命令的时候，将需要删除的文件移动至主目录下的 .trash 目录。  
