@@ -7,7 +7,7 @@ then
     mkdir .termux
     if ! grep extra-key $HOME/.termux/termux.properties  
     then
-        echo "extra-keys = [['ESC','/','-','HOME','UP','END','PGUP'],['TAB','CTRL','ALT','LEFT','DOWN','RIGHT','PGDN']]" >> .termux/termux.properties
+        echo "extra-keys = [['ESC','/','-','HOME','UP','END','PGUP'],['TAB','CTRL','ALT','LEFT','DOWN','RIGHT','PGDN']]" > .termux/termux.properties
         echo "bell-character = ignore" >> .termux/termux.properties 
     fi
 fi
@@ -23,7 +23,7 @@ fi
 #     echo "deb https://mirrors.ustc.edu.cn/termux stable main" >> $PREFIX/etc/apt/sources.list
 # fi
 
-pkg install -y git openssh cowsay tree zsh wget curl build-essential cmake python vim ctags imagemagic ffmpeg termux-tools termux-api
+pkg install -y git openssh cowsay tree zsh wget curl build-essential cmake python vim ctags termux-tools termux-api
 
 # set cowsay "Don't do anything stupid" to launch welcome
 cowsay "Don't do anything stupid" > ../usr/etc/motd
