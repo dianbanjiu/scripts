@@ -20,3 +20,6 @@
 
 ## zsh-installation
 下载 oh-my-zsh 及 zsh-syntax 和 zsh-autosuggestions 两个插件。  
+
+## note
+一个我用来快速创建并生成日记文件的脚本
