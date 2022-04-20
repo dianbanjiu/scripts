@@ -1,9 +1,14 @@
 #!/usr/bin/env python3
 
+from ast import Not
 import os
 
 # 启用 termux 的两行键盘
-file = open("~/.termux/termux.properties", mode='a')
+termux_config_path = "~/.termux"
+termux_stat = os.stat(termux_config_path)
+if not os.path.exists(termux_config_path):
+    os.mkdir("./termux")
+file = open(termux_config_path+"/termux.properties", mode='a')
 key='''
 extra-keys = [['ESC','/','-','HOME','UP','END','PGUP'],['TAB','CTRL','ALT','LEFT','DOWN','RIGHT','PGDN']]
 echo "bell-character = ignore
